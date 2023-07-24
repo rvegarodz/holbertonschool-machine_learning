@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" This file contains the function called matrix_shape()"""
 
 def matrix_shape(matrix):
     """
