@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ This file contains the function called matrix_shape()"""
 
+
 def matrix_shape(matrix):
     """
     Function that find the shape of a matrix using recursion
