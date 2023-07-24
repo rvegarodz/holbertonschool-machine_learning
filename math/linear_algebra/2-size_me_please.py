@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def matrix_shape(matrix):
-    """ 
+    """
     Function that find the shape of a matrix using recursion
     Arguments:
         matrix: nested list
