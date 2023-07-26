@@ -12,7 +12,7 @@ def cat_matrices2D(mat1, mat2, axis=0):
     Returns: new matrix
     """
     nw_matrix = []
-    if (len(mat1) != len(mat2)):
+    if (len(mat1) != len(mat2) and mat1 and mat2):
         if (axis == 0):
             nw_matrix = []
             for i in mat1:
