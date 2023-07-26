@@ -11,16 +11,15 @@ def cat_matrices2D(mat1, mat2, axis=0):
         axis: specific axis
     Returns: new matrix
     """
+    nw_matrix = []
     if (axis == 0):
         nw_matrix = []
         for i in mat1:
-            nw_matrix.append(i)
-        for i in mat2:
-            nw_matrix.append(i)
-        return nw_matrix
+            nw_matrix.append(list(i))
+        for j in mat2:
+            nw_matrix.append(list(j))
     else:
-        nw_matrix = []
         if (len(mat1) == len(mat2)):
             for i in range(len(mat1)):
                 nw_matrix.append(mat1[i] + mat2[i])
-            return nw_matrix
+    return nw_matrix
