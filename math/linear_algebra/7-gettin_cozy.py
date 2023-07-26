@@ -11,19 +11,18 @@ def cat_matrices2D(mat1, mat2, axis=0):
         axis: specific axis
     Returns: new matrix
     """
+    if axis == 0 and len(mat1[0]) != len(mat2[0]):
+        return None
+    if axis == 1 and len(mat1) != len(mat2):
+        return None
+    
     nw_matrix = []
     if (axis == 0):
-        if (len(mat1) == len(mat2) and len(mat1[0]) == len(mat2[0]) and len(mat1[0]) != 0):
-            for i in mat1:
-                nw_matrix.append(list(i))
-            for j in mat2:
-                nw_matrix.append(list(j))
-        else:
-            return None
+        for i in mat1:
+            nw_matrix.append(list(i))
+        for j in mat2:
+            nw_matrix.append(list(j))
     else:
-        if (len(mat1) == len(mat2) and len(mat1[0]) == len(mat2[0]) and len(mat1[0]) != 0):
-            for i in range(len(mat1)):
-                nw_matrix.append(mat1[i] + mat2[i])
-        else:
-            return None
+        for i in range(len(mat1)):
+            nw_matrix.append(mat1[i] + mat2[i])
     return nw_matrix
