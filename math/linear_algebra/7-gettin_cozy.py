@@ -12,16 +12,16 @@ def cat_matrices2D(mat1, mat2, axis=0):
     Returns: new matrix
     """
     nw_matrix = []
-    if (len(mat1) != len(mat2) and mat1 and mat2):
-        if (axis == 0):
-            nw_matrix = []
+    if (axis == 0):
+        if (mat1[0] and mat2[0]):
             for i in mat1:
                 nw_matrix.append(list(i))
             for j in mat2:
                 nw_matrix.append(list(j))
         else:
-            if (len(mat1) == len(mat2)):
-                for i in range(len(mat1)):
-                    nw_matrix.append(mat1[i] + mat2[i])
-        return nw_matrix
-    return None
+            return None
+    else:
+        if (len(mat1) == len(mat2)):
+            for i in range(len(mat1)):
+                nw_matrix.append(mat1[i] + mat2[i])
+    return nw_matrix

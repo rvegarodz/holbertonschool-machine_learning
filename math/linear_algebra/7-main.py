@@ -7,7 +7,6 @@ print(id(mat1[1]))
 mat2 = [[5, 6]]
 mat3 = [[7], [8]]
 mat4 = cat_matrices2D(mat1, mat2)
-print(id(mat4[1]))
 mat5 = cat_matrices2D(mat1, mat3, axis=1)
 print(mat4)
 print(mat5)
