@@ -63,6 +63,7 @@ ax4.set_ylim(0)
 ax4.set_title("Exponential Decay of Radioactive Elements", fontsize="x-small")
 ax4.set_xlabel("Time (years)", fontsize="x-small")
 ax4.set_ylabel("Fraction Remaining", fontsize="x-small")
+ax4.legend(["C-14", "Ra-226"], loc="upper right", fontsize="x-small")
 
 # Fifth graph
 ax5.hist(student_grades, bins=range(0, 110, 10), edgecolor="black")
