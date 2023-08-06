@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """ File that contians the function summation_i_squared"""
-import numpy as np
 
 
 def summation_i_squared(n):
