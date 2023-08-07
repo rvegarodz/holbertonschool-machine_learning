@@ -10,7 +10,7 @@ def poly_derivative(poly):
         result = []
         lenn = len(poly)
         if (lenn == 0):
-            return None
+            return result.append(0)
         elif (lenn == 1):
             return result.append(0)
         else:
