@@ -9,7 +9,7 @@ class Poisson():
         pi = 3.1415926536
         e = 2.7182818285
 
-        if data and data is not None:
+        if data:
             if type(data) != list:
                 raise TypeError("data must be a list")
             elif len(data) < 2:
