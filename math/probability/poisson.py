@@ -34,3 +34,14 @@ class Poisson():
         for i in range(1, k + 1):
             result *= i
         return ((self.lambtha ** k) * (e ** -self.lambtha) / result)
+
+    def cdf(self, k):
+        "This method calculate Cumulative Distribution Function (CDF)"
+        if k <= 0:
+            return 0
+        if not isinstance(k, int):
+            k = int(k)
+        result = 0
+        for i in range(k + 1):
+            result += self.pmf(i)
+        return result
