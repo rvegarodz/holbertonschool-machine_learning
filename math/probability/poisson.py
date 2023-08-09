@@ -25,6 +25,8 @@ class Poisson():
 
     def pmf(self, k):
         "This method calculate Poisson Mass Function (PMF)"
+        if k <= 0:
+            return 0
         if not isinstance(k, int):
             k = int(k)
         e = 2.7182818285
