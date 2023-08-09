@@ -22,3 +22,12 @@ class Poisson():
                 raise ValueError("lambtha must be a positive value")
             else:
                 self.lambtha = float(lambtha)
+
+    def pmf(self, k):
+        if type(k) == int:
+            result = 1
+            for i in range(1, k + 1):
+                result *= i
+            return result
+        else:
+            return 0
