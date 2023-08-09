@@ -24,10 +24,11 @@ class Poisson():
                 self.lambtha = float(lambtha)
 
     def pmf(self, k):
-        if type(k) == int:
-            result = 1
-            for i in range(1, k + 1):
-                result *= i
-            return result
-        else:
-            return 0
+        "This method calculate Poisson Mass Function (PMF)"
+        if not isinstance(k, int):
+            k = int(k)
+        e = 2.7182818285
+        result = 1
+        for i in range(1, k + 1):
+            result *= i
+        return ((self.lambtha ** k) * (e ** -self.lambtha) / result)
