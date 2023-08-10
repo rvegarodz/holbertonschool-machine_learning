@@ -28,11 +28,11 @@ class Exponential():
             m = 1 / (sum(item for item in self.data) / len(self.data))
             exponent = (-m) * 0
             result = m * (e ** exponent)
-            self.__lambtha = float(result)
+            self.__lambtha = result
 
     def pdf(self, x):
         "This method calculate Poisson Mass Function (PMF)"
-        if x <= 0:
+        if x < 0:
             return 0
         if not isinstance(x, int):
             x = int(x)
@@ -40,4 +40,4 @@ class Exponential():
         m = self.__lambtha
         exponent = (-m) * x
         result = m * (e ** exponent)
-        return float(result)
+        return result
