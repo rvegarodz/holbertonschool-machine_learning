@@ -6,22 +6,28 @@ class Poisson():
     "This class represent a poisson distribution"
 
     def __init__(self, data=None, lambtha=1.):
+        self.data = data
+        self.lambtha = lambtha
+
+    @property
+    def lambtha(self):
+        return self.__lambtha
+
+    @lambtha.setter
+    def lambtha(self, lambtha):
         pi = 3.1415926536
         e = 2.7182818285
-
-        if data:
-            if type(data) != list:
-                raise TypeError("data must be a list")
-            elif len(data) < 2:
-                raise ValueError("data must contain multiple values")
-            else:
-                mean = sum(item for item in data) / len(data)
-                self.lambtha = float(mean)
+        if lambtha <= 0:
+            raise ValueError("lambtha must be a positive value")
+        if self.data is None:
+            self.__lambtha = float(lambtha)
         else:
-            if lambtha <= 0:
-                raise ValueError("lambtha must be a positive value")
-            else:
-                self.lambtha = float(lambtha)
+            if type(self.data) != list:
+                raise TypeError("data must be a list")
+            if len(self.data) < 2:
+                raise ValueError("data must contain multiple values")
+            mean = sum(item for item in self.data) / len(self.data)
+            self.__lambtha = float(mean)
 
     def pmf(self, k):
         "This method calculate Poisson Mass Function (PMF)"
@@ -33,15 +39,19 @@ class Poisson():
         result = 1
         for i in range(1, k + 1):
             result *= i
-        return ((self.lambtha ** k) * (e ** -self.lambtha) / result)
+        return ((e ** -self.lambtha) * (self.lambtha ** k) / result)
 
     def cdf(self, k):
         "This method calculate Cumulative Distribution Function (CDF)"
-        if k <= 0:
+        if k < 0:
             return 0
         if not isinstance(k, int):
             k = int(k)
-        result_cdf = 0
-        for i in range(1, k + 1):
-            result_cdf += self.pmf(i)
-        return result_cdf
+        e = 2.7182818285
+        cdf_result = 0
+        for i in range(0, k+1):
+            factorial = 1
+            for j in range(1, i+1):
+                factorial *= j
+            cdf_result += (self.lambtha ** i / factorial)
+        return (cdf_result / e ** self.lambtha)
