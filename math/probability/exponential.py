@@ -42,3 +42,13 @@ class Exponential():
         exponent = (-m) * x
         result = m * (e ** exponent)
         return result
+
+    def cdf(self, x):
+        "This method calculate Poisson Mass Function (PMF)"
+        if x < 0:
+            return 0
+        e = 2.7182818285
+        m = self.__lambtha
+        exponent = (-m) * x
+        result = 1 - (e ** exponent)
+        return result
