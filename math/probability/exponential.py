@@ -25,7 +25,10 @@ class Exponential():
                 raise TypeError("data must be a list")
             if len(self.data) < 2:
                 raise ValueError("data must contain multiple values")
-            m = 1 / (sum(item for item in self.data) / len(self.data))
+            sum = 0
+            for i in range(len(self.data)):
+                sum += self.data[i]
+            m = 1 / (sum / len(self.data))
             exponent = (-m) * 0
             result = m * (e ** exponent)
             self.__lambtha = result
@@ -34,8 +37,6 @@ class Exponential():
         "This method calculate Poisson Mass Function (PMF)"
         if x < 0:
             return 0
-        if not isinstance(x, int):
-            x = int(x)
         e = 2.7182818285
         m = self.__lambtha
         exponent = (-m) * x
