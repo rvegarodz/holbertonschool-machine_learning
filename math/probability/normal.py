@@ -34,7 +34,7 @@ class Normal():
 
     @stddev.setter
     def stddev(self, stddev):
-        if stddev < 0:
+        if stddev <= 0:
             raise ValueError("stddev must be a positive value")
         if self.data is None:
             self.__stddev = float(stddev)
