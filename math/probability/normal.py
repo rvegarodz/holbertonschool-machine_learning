@@ -34,7 +34,6 @@ class Normal():
 
     @stddev.setter
     def stddev(self, stddev):
-        e = 2.7182818285
         if stddev < 0:
             raise ValueError("stddev must be a positive value")
         if self.data is None:
@@ -43,5 +42,5 @@ class Normal():
             sum = 0
             for i in range(len(self.data)):
                 sum += ((self.data[i] - self.mean) ** 2)
-            variance = (sum / self.mean)
+            variance = (sum / len(self.data))
             self.__stddev = variance ** 0.5
