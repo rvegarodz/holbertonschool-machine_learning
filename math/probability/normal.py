@@ -9,7 +9,7 @@ class Normal():
         self.data = data
         self.mean = float(mean)
         self.stddev = float(stddev)
-    
+
     @property
     def mean(self):
         return self.__mean
