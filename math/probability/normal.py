@@ -70,6 +70,7 @@ class Normal():
             return x_pdf
 
     def cdf(self, x):
+        "Function that calculates the value of the CDF for a given x-value"
         if x:
             pi = 3.1415926536
             z = self.z_score(x)
