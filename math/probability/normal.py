@@ -68,3 +68,16 @@ class Normal():
             base = (1 / (r * ((2 * pi) ** 0.5)))
             x_pdf = base * (e ** (-exponent))
             return x_pdf
+
+    def cdf(self, x):
+        if x:
+            pi = 3.1415926536
+            z = self.z_score(x)
+            ez = z / (2 ** (1 / 2))
+            erf = ((2 / (pi ** (1 / 2))) *
+                   (ez - ((ez ** 3) / 3) +
+                    ((ez ** 5) / 10) -
+                    ((ez ** 7) / 42) +
+                    ((ez ** 9) / 216)))
+            x_cdf = ((1/2)*(1+erf))
+            return x_cdf
