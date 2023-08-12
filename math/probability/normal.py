@@ -46,11 +46,13 @@ class Normal():
             self.__stddev = variance ** 0.5
 
     def z_score(self, x):
+        "Function that calculates the z-score of a given x-value"
         if x:
             z = (x - self.mean) / self.stddev
             return z
 
     def x_value(self, z):
+        "Function that calculates the x-value of a given z-score"
         if z:
             x = z * self.stddev + self.mean
             return x
