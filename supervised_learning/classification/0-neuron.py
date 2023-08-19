@@ -7,6 +7,7 @@ class Neuron():
     """Class that defines a single neuron performing binary classification"""
 
     def __init__(self, nx):
+        """Init of the Neuron class"""
         if type(nx) != int:
             raise TypeError("nx must be an integer")
         elif nx < 1:
