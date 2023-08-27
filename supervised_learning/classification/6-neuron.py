@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 """File that contain Neuron class"""
-import numpy as np
-import matplotlib.pyplot as plt
-
 
 class Neuron():
     """Class that defines a single neuron performing binary classification"""
