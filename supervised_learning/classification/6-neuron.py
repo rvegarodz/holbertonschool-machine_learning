@@ -2,6 +2,7 @@
 """File that contain Neuron class"""
 import numpy as np
 
+
 class Neuron():
     """Class that defines a single neuron performing binary classification"""
 
