@@ -165,33 +165,7 @@ class Neuron:
 
     def train(self, X, Y, iterations=5000, alpha=0.05,
               verbose=True, graph=True, step=100):
-        """
-            Trains the neuron
-
-            @X is a numpy.ndarray with shape(nx, m) the input data
-                @nx: is the number of input features to the neuron
-                @m: is the number of examples
-            @Y: is a numpy.ndarray with shape (1, m) the correct label
-                for the input data
-                @m: is the number of examples
-            @iterations: is the number of iteration to train over
-            @alpha: is the learning rate
-            @verbose: is a boolean that defines whether or not to
-                    print information about the training
-            @graph: is a boolean that defines whether or not to graph
-                    information about the training once the training
-                    has completed.
-            @step:
-
-            Return: the evaluation of the training data after
-                    iterations of training have occurred
-
-            Raises:
-                TypeError: iterations must be an integer
-                ValueError: iterations must be a positive integer
-                TypeError: alpha must be a float
-                ValueError: alpha must be positive
-        """
+        """Trains the neuron"""
         if type(iterations) is not int:
             raise TypeError("iterations must be an integer")
 
