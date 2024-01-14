@@ -7,7 +7,6 @@ class NeuralNetwork:
     """ NeuralNetwork with one hidden layer performing binary
         classification """
     def __init__(self, nx, nodes):
-        
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
         if nx < 1:
