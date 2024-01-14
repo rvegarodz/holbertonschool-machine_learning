@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """ Module contains NeuralNetwork Class """
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 class NeuralNetwork:
@@ -91,9 +90,10 @@ class NeuralNetwork:
         self.__W2 = self.__W2 - alpha * dw2
         self.__b2 = self.__b2 - alpha * db2
 
-    def train(self, X, Y, iterations=5000, alpha=0.05,
-              verbose=True, graph=True, step=100):
-        """Trains the neural network"""
+    def train(self, X, Y, iterations=5000, alpha=0.05):
+        """
+            Trains the neural network
+        """
         if type(iterations) is not int:
             raise TypeError("iterations must be an integer")
 
@@ -105,30 +105,7 @@ class NeuralNetwork:
 
         if alpha < 0:
             raise ValueError("alpha must be positive")
-
-        if verbose is True and graph is True:
-            if type(step) is not int:
-                raise TypeError("step must be an integer")
-            if step < 0 or step > iterations:
-                raise ValueError("step must be positive and <= iterations")
-        Costs = []
-        Iterations = []
-
         for train in range(iterations):
-            pred, cost = self.evaluate(X, Y)
             self.forward_prop(X)
             self.gradient_descent(X, Y, self.__A1, self.__A2, alpha)
-            if train % step == 0:
-                Costs.append(cost)
-                Iterations.append(train)
-                if verbose:
-                    print(f"Cost after {train} iterations: {cost}")
-
-        if graph:
-            plt.plot(Iterations, Costs, 'b')
-            plt.ylabel('cost')
-            plt.xlabel('iteration')
-            plt.title('Training Cost')
-            plt.show()
-
         return self.evaluate(X, Y)
