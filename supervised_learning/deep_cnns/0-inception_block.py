@@ -6,7 +6,12 @@ import tensorflow.keras as K
 
 
 def inception_block(A_prev, filters):
-    """Builds an inception block"""
+    """Builds an inception block
+    Args:
+        A_prev (ndarray): output from the previous layer
+        filters (tuple or list): contains F1, F3R, F3, F5R, F5, FPP
+    Returns:
+        concatenated output of the inception block"""
     activation = 'relu'
     init = K.initializers.he_normal(seed=None)
     F1, F3R, F3, F5R, F5, FPP = filters
