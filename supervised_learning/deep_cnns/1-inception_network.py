@@ -25,12 +25,10 @@ def inception_network():
     # Second convolutional layer
     conv_2P = K.layers.Conv2D(filters=64, kernel_size=1, padding='valid',
                               activation=activation,
-                              kernel_initializer=K.initializers.HeNormal()
-                              )(max_pool_1)
+                              kernel_initializer=K.initializers.HeNormal())(max_pool_1)
     conv_2 = K.layers.Conv2D(filters=192, kernel_size=3, padding='same',
                              activation=activation,
-                             kernel_initializer=K.initializers.HeNormal()
-                             )(conv_2P)
+                             kernel_initializer=K.initializers.HeNormal())(conv_2P)
     max_pool_2 = K.layers.MaxPooling2D(pool_size=[3, 3], strides=(2, 2),
                                        padding='same')(conv_2)
 
@@ -69,7 +67,7 @@ def inception_network():
     return model
 
 
-# If you have a main block to instantiate and test the model:
+# If you have a main block to instantiate and test the model, you can do so like this:
 if __name__ == "__main__":
     model = inception_network()
     model.summary()
