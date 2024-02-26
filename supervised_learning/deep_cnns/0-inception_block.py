@@ -13,7 +13,7 @@ def inception_block(A_prev, filters):
     Returns:
         concatenated output of the inception block"""
     activation = 'relu'
-    init = K.initializers.he_normal(seed=None)
+    init = K.initializers.he_normal(seed=42)  # Change the seed value as needed
     F1, F3R, F3, F5R, F5, FPP = filters
     convolution_1 = K.layers.Conv2D(filters=F1, kernel_size=1,
                                     padding='same', activation=activation,
